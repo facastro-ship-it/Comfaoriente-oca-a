@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institución Educativa ComfaOriente Ocaña</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .navbar {
+      background: linear-gradient(to right, #012B72, #004AAD);
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 400px; /* Ajusta según tu gusto */
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* para que se vea completa */
+      display: none;
+      transition: opacity 0.5s ease;
+    }
+    .hero img.active {
+      display: block;
+      opacity: 1;
+    }
+    .boton {
+      background-color: #E7B100;
+      transition: all 0.3s ease;
+    }
+    .boton:hover {
+      background-color: #F1C300;
+      transform: translateY(-2px);
+    }
+    .control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .prev {
+      left: 20px;
+    }
+    .next {
+      right: 20px;
+    }
+  </style>
+</head>
+
+<body class="font-sans text-gray-900">
+
+  <!-- NAVBAR -->
+  <nav class="navbar text-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center space-x-3">
+        <img src="comfa-removebg-preview.png" alt="Logo de la Institución Educativa ComfaOriente" class="h-10 w-auto">
+      </div>
+      <ul class="flex space-x-6 font-medium">
+        <li><a href="#" class="hover:text-yellow-400">Inicio</a></li>
+        <li><a href="#quienes-somos" class="hover:text-yellow-400">Quiénes Somos</a></li>
+        <li><a href="#" class="hover:text-yellow-400">Servicios</a></li>
+        <li><a href="#" class="hover:text-yellow-400">Admisiones</a></li>
+        <li><a href="#" class="hover:text-yellow-400">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SECCIÓN HERO CON CARRUSEL CONTROLABLE -->
+  <section class="hero mt-6">
+    <img src="imagen-destacada-ocana.png" alt="Estudiantes del colegio en clase" class="active">
+    <img src="ocana-web-inicio-819x1024.png" alt="Actividades recreativas en ComfaOriente Ocaña">
+    <img src="imagen3.png" alt="Fachada de la Institución Educativa ComfaOriente">
+
+    <button class="control prev" onclick="moverSlide(-1)">❮</button>
+    <button class="control next" onclick="moverSlide(1)">❯</button>
+  </section>
+
+  <section class="text-center mt-10 px-6">
+    <h2 class="text-2xl font-bold text-blue-900 mb-3">Bienvenidos a la Institución Educativa ComfaOriente Ocaña</h2>
+    <p class="text-gray-700 max-w-2xl mx-auto">Comprometidos con la excelencia académica y el desarrollo integral de nuestros estudiantes.</p>
+  </section>
+
+  <!-- BOTONES DE ACCESO RÁPIDO -->
+  <section class="text-center mt-10">
+    <div class="flex justify-center space-x-6 flex-wrap">
+      <button class="boton px-6 py-3 rounded-lg text-white font-semibold cursor-not-allowed">INSCRIPCIONES</button>
+      <button class="boton px-6 py-3 rounded-lg text-white font-semibold cursor-not-allowed">MATRÍCULAS</button>
+      <button class="boton px-6 py-3 rounded-lg text-white font-semibold cursor-not-allowed">TARIFAS 2026</button>
+      <button class="boton px-6 py-3 rounded-lg text-white font-semibold cursor-not-allowed">INTRANET</button>
+    </div>
+  </section>
+
+  <!-- SECCIÓN QUIÉNES SOMOS -->
+  <section id="quienes-somos" class="text-center mt-20 px-8">
+    <h2 class="text-4xl font-semibold text-blue-900 mb-4 tracking-wide">Misión</h2>
+    <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed text-lg">
+      El centro educativo ComfaOriente Ocaña brinda una educación integral con un enfoque inclusivo, 
+      desarrollando en los estudiantes competencias básicas en la edificación de valores como el respeto,
+      la empatía, la responsabilidad y el amor; ofreciendo a sus afiliados y a la comunidad en general los niveles de preescolar y básica primaria, 
+      garantizando una educación de calidad.
+    </p>
+  </section>
+
+  <section class="text-center mt-16 px-8">
+    <h2 class="text-4xl font-semibold text-blue-900 mb-4 tracking-wide">Visión</h2>
+    <p class="text-gray-700 max-w-3xl mx-auto leading-relaxed text-lg">
+      En el año 2030, el Centro Educativo ComfaOriente Ocaña será reconocido en el Oriente Colombiano 
+      como una institución de la Caja de Compensación Familiar ComfaOriente que forma estudiantes 
+      en valores, brindando una educación integral con enfoque inclusivo y contribuyendo a la 
+      construcción de una mejor sociedad.
+    </p>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="mt-16 bg-blue-900 text-white py-6 text-center">
+    <p class="text-sm">© 2025 Institución Educativa ComfaOriente Ocaña | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- SCRIPT DEL CARRUSEL -->
+  <style>
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .navbar {
+    background: linear-gradient(to right, #012B72, #004AAD);
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+    transition: opacity 0.5s ease;
+  }
+
+  .hero img.active {
+    display: block;
+    opacity: 1;
+  }
+
+  .boton {
+    background-color: #E7B100;
+    transition: all 0.3s ease;
+  }
+
+  .boton:hover {
+    background-color: #F1C300;
+    transform: translateY(-2px);
+  }
+
+  /* --- BOTONES DEL CARRUSEL MEJORADOS --- */
+  .control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 213, 0, 0.6);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 14px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .control:hover {
+    background: rgba(255, 213, 0, 0.3);
+    transform: scale(1.15);
+    box-shadow: 0 0 15px rgba(255,213,0,0.6);
+  }
+
+  .prev { left: 20px; }
+  .next { right: 20px; }
+</style>
+
+<!-- SCRIPT DEL CARRUSEL -->
+<script>
+  let indice = 0;
+  const slides = document.querySelectorAll(".hero img");
+
+  function mostrarSlide(n) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    indice = (n + slides.length) % slides.length;
+    slides[indice].classList.add("active");
+  }
+
+  function moverSlide(n) {
+    mostrarSlide(indice + n);
+  }
+
+  // --- AUTO ROTACIÓN AUTOMÁTICA CADA 5 SEGUNDOS ---
+  setInterval(() => {
+    moverSlide(1);
+  }, 5000);
+</script>
+
+
+</body>
+</html>
+
+
